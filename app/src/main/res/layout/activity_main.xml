@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+ <!-- EditText para filtrar -->
+ <EditText
+     android:id="@+id/editTextCountryFilter"
+     android:layout_width="0dp"
+     android:layout_height="wrap_content"
+     android:hint="Filtrar"
+     android:imeOptions="actionDone"
+     android:inputType="text"
+     app:layout_constraintEnd_toStartOf="@+id/btnAplicarFiltro"
+     app:layout_constraintHorizontal_chainStyle="packed"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toTopOf="parent" />
+
+ <!-- Botón para aplicar el filtro -->
+ <Button
+     android:id="@+id/btnAplicarFiltro"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Aplicar"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintTop_toTopOf="@id/editTextCountryFilter" />
+
+ <!-- SwipeRefreshLayout para "swipe-to-refresh" -->
+ <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+     android:id="@+id/swipeRefreshLayout"
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     app:layout_constraintBottom_toTopOf="@+id/empty"
+     app:layout_constraintTop_toBottomOf="@+id/editTextCountryFilter">
+
+  <!-- RecyclerView para mostrar la lista de sismos -->
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recycler_sismos"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:listitem="@layout/sismo_item" />
+ </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+ <!-- TextView para mostrar mensaje si no hay sismos disponibles -->
+ <TextView
+     android:id="@+id/empty"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="16dp"
+     android:gravity="center"
+     android:text="No hay sismos disponibles"
+     android:textColor="@android:color/black"
+     android:textSize="24sp"
+     android:textStyle="bold"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/swipeRefreshLayout"
+     app:layout_constraintVertical_bias="0.5"
+     tools:visibility="gone" />
+
+ <!-- Botón para actualizar los resultados -->
+ <Button
+     android:id="@+id/btnActualizar"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Actualizar"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     android:layout_margin="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
