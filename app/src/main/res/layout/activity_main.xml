@@ -12,20 +12,23 @@
      android:id="@+id/editTextCountryFilter"
      android:layout_width="0dp"
      android:layout_height="wrap_content"
-     android:hint="Filtrar"
+
+     android:hint="@string/filtrar"
      android:imeOptions="actionDone"
      android:inputType="text"
+     android:textColorHint="#546E7A"
      app:layout_constraintEnd_toStartOf="@+id/btnAplicarFiltro"
      app:layout_constraintHorizontal_chainStyle="packed"
      app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toTopOf="parent" />
+     app:layout_constraintTop_toTopOf="parent"
+     tools:ignore="Autofill,VisualLintTextFieldSize" />
 
  <!-- Botón para aplicar el filtro -->
  <Button
      android:id="@+id/btnAplicarFiltro"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
-     android:text="Aplicar"
+     android:text="@string/aplicar"
      app:layout_constraintEnd_toEndOf="parent"
      app:layout_constraintTop_toTopOf="@id/editTextCountryFilter" />
 
@@ -52,7 +55,7 @@
      android:layout_height="wrap_content"
      android:layout_marginTop="16dp"
      android:gravity="center"
-     android:text="No hay sismos disponibles"
+     android:text="@string/no_hay_sismos_disponibles"
      android:textColor="@android:color/black"
      android:textSize="24sp"
      android:textStyle="bold"
@@ -68,7 +71,7 @@
      android:id="@+id/btnActualizar"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
-     android:text="Actualizar"
+     android:text="@string/actualizar"
      app:layout_constraintBottom_toBottomOf="parent"
      app:layout_constraintEnd_toEndOf="parent"
      android:layout_margin="16dp"/>

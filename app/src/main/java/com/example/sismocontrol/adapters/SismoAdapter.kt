@@ -123,11 +123,15 @@ class SismoAdapter : RecyclerView.Adapter<SismoAdapter.SismoViewHolder>() {
     @RequiresApi(Build.VERSION_CODES.O)
     fun compartirMensaje(context: Context, sismo: Sismo) {
         val mensaje =
-            "Hola, acaba de haber un temblor en: ${sismo.lugar} de magnitud ${sismo.magnitud}. " +
-                    "Aquí tienes la ubicación en Google Maps: " +
+            "Hola, comparto informacion sobre un temblor en: \n" +
+                    "${sismo.lugar} de magnitud ${sismo.magnitud}.\n" +
+                    "Aquí tienes la ubicación en Google Maps: \n" +
                     "https://www.google.com/maps?q=${sismo.latitud},${sismo.longitud}\n\n" +
-                    "Para más detalles sobre este temblor, visita: " +
-                    "https://earthquake.usgs.gov/earthquakes/"
+                    "Para más detalles sobre este temblor, visite: \n" +
+                    "https://earthquake.usgs.gov/earthquakes/ \n" +
+                    "O bien, revise la web del Centro Sismologico Nacional de la Universidad de " +
+                    "Chile para más información sobre este evento:\n" +
+                    "https://www.sismologia.cl/"
 
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"

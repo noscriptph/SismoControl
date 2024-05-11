@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SismoControl</string>
+    <string name="hace_n_horas">Hace n horas</string>
+    <string name="lista_no_disponible">Lista no disponible</string>
+    <string name="magnitud">3.5</string>
+    <string name="acceder">acceder</string>
+    <string name="aplicar">Aplicar</string>
+    <string name="no_hay_sismos_disponibles">No hay sismos disponibles</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="filtrar">Filtrar</string>
 </resources>
